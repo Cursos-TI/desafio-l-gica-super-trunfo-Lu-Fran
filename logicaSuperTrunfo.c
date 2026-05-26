@@ -8,36 +8,112 @@
 int main() {
     // Definição das variáveis para armazenar as propriedades das cidades
     // Você pode utilizar o código do primeiro desafio
+    //Criar variáveis das duas cartas:
+    char estado[20], codigo_carta[5], cidade[30];
+    int populacao, num_pontos_turisticos;
+    float area, pib, densidade_populacional, pib_per_capita;
+
+    char estado2[20], codigo_carta2[5], cidade2[30];
+    int populacao2, num_pontos_turisticos2;
+    float area2, pib2, densidade_populacional2, pib_per_capita2;
 
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
     // utilize o código do primeiro desafio
+    //Cadastrar 2 cartas
+    printf("Estado: \n");
+    scanf("%s", &estado);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("Código carta: \n");
+    scanf("%s", &codigo_carta);
+
+    printf("Cidade: \n");
+    scanf("%s", &cidade);
+
+    printf("População: \n");
+    scanf("%d", &populacao);
+
+    printf("Quantidade pontos turísticos: \n");
+    scanf("%d", &num_pontos_turisticos);
+    
+    printf("Área: \n");
+    scanf("%f", &area);
+
+    printf("Pib: \n");
+    scanf("%f", &pib);
+
+    printf("Estado Nº2: \n");
+    scanf("%s", &estado2);
+
+    printf("Código carta Nº2: \n");
+    scanf("%s", &codigo_carta2);
+
+    printf("Cidade Nº2: \n");
+    scanf("%s", &cidade2);
+
+    printf("População Nº2: \n");
+    scanf("%d", &populacao2);
+
+    printf("Quantidade pontos turísticos Nº2: \n");
+    scanf("%d", &num_pontos_turisticos2);
+    
+    printf("Área Nº2: \n");
+    scanf("%f", &area2);
+
+    printf("Pib Nº2: \n");
+    scanf("%f", &pib2);
+
+    //Cálculo densidade Populacional: População / Área
+    densidade_populacional = populacao / area;
+    densidade_populacional2 = populacao2 / area2;
+ 
+    //Cálculo PIB per capita: PIB / População
+    pib_per_capita = pib / populacao;
+    pib_per_capita2 = pib2 / populacao2;
 
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    //Comparativo entre atributos
+    if (populacao > populacao2){
+        printf("População da carta %s - %s é maior número - %d, venceu!\n", codigo_carta, estado, populacao);
+    } else {
+        printf("População da carta %s - %s é maior número - %d, venceu!\n", codigo_carta2, estado2, populacao2);
+    }
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    if (num_pontos_turisticos > num_pontos_turisticos2){
+        printf("Cidade %s da carta %s tem mais pontos turísticos - %d, venceu!\n", cidade, codigo_carta, num_pontos_turisticos);
+    } else {
+        printf("Cidade %s da carta %s tem mais pontos turísticos - %d, venceu!\n", cidade2, codigo_carta2, num_pontos_turisticos2);
+    }
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    if (area > area2){
+        printf("Cidade %s da carta %s tem maior área - %.2f, venceu!\n", cidade, codigo_carta, area);
+    } else {
+        printf("Cidade %s da carta %s tem maior área - %.2f, venceu!\n", cidade2, codigo_carta2, area2);
+    }
+
+    if (pib > pib2){
+        printf("Cidade %s da carta %s tem maior pib - %.2f, venceu!\n", cidade, codigo_carta, pib);
+    } else {
+        printf("Cidade %s da carta %s tem maior pib - %.2f, venceu!\n", cidade2, codigo_carta2, pib2);
+    }
+
+    if (pib_per_capita > pib_per_capita2){
+        printf("Cidade %s da carta %s tem maior pib per capita - %.2f, venceu!\n", cidade, codigo_carta, pib_per_capita);
+    } else {
+        printf("Cidade %s da carta %s tem maior pib - %.2f, venceu!\n", cidade2, codigo_carta2, pib_per_capita2);
+    }
+
+    if (densidade_populacional < densidade_populacional2){
+        printf("Cidade %s da carta %s tem menor densidade populacional - %.2f, venceu!\n", cidade, codigo_carta, densidade_populacional);
+    } else {
+        printf("Cidade %s da carta %s tem menor densidade populacional - %.2f, venceu!\n", cidade2, codigo_carta2, densidade_populacional2);
+    }
+
 
     return 0;
 }
